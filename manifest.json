@@ -1,0 +1,6 @@
+{
+    "name": "Weather App",
+    "description": "Extension for weather app.",
+    "version": "1.0",
+    "manifest_version": 3
+}
