@@ -4,10 +4,9 @@
     "version": "1.0",
     "manifest_version": 3,
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "weather.js"
     },
     "options_page": "options.html",
-    "permissions": [ "storage", "activeTab", "scripting" ],
     "action": {
         "default_popup": "index.html",
         "defaut_icon": {
@@ -22,5 +21,11 @@
         "32": "/icons/icon32.png",
         "48": "/icons/icon48.png",
         "128": "/icons/icon128.png"
-    }
+    },
+    "permissions": [
+        "geolocation",
+        "storage",
+        "activeTab",
+        "scripting"
+    ]
 }
