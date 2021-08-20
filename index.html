@@ -7,14 +7,33 @@
 <body>
     <div class="container">
         <div class="block">
-            <div class="block-header">
-                <div id="title"></div>
+            <div id="blockHeader">
+                <div id="blockTitle"></div>
             </div>
 
-            <div class="block-content">
+            <div class="blockContent">
                 <input id="searchLocation" type="text" placeholder="Type the city and press enter">
+                <div id="searchError" style="color: #FF2E2E; display: none;">Enter a valid city.</div>
+
                 <br/>
-                <div id="weather"></div>
+
+                <div id="weatherBlock">
+                    <div id="weatherLocation">
+                        <div id="weatherLocationName"></div>
+                        <div id="weatherLocationLocaltime"></div>
+                        <div id="weatherLocationTZ"></div>
+                    </div>
+
+                    <div id="currentWeather">
+                        <div id="currentCondition">
+                            <img id="currentConditionIcon"/>
+                            <div id="currentConditionText"></div>
+                            <div id="currentConditionLastUpdated"></div>
+                            <div id="currentConditionTemp"></div>
+                            <div id="currentConditionAQI"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
