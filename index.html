@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/button.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
     <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="block">
-            <div id="blockHeader">
-                <div id="blockTitle"></div>
-            </div>
-
-            <div class="blockContent">
+            <div class="blockHeader">
                 <input id="searchLocation" type="text" placeholder="Type the city and press enter">
-                <div id="searchError" style="color: #FF2E2E; display: none;">Enter a valid city.</div>
+            </div>
+        </div>
 
-                <br/>
-
+        <div class="block">
+            <div class="blockContent">
                 <div id="weatherBlock">
                     <div id="weatherLocation">
-                        <div id="weatherLocationName"></div>
-                        <div id="weatherLocationLocaltime"></div>
-                        <div id="weatherLocationTZ"></div>
+                        <div id="weatherLocationName" style="margin-right: 0.5rem;"></div>
+                        <div style="text-align: right; font-size: 0.65rem;">
+                            <div id="weatherLocationLocaltime"></div>
+                            <div id="weatherLocationTZ"></div>
+                        </div>
                     </div>
 
                     <div id="currentWeather">
                         <div id="currentCondition">
-                            <img id="currentConditionIcon"/>
-                            <div id="currentConditionText"></div>
-                            <div id="currentConditionLastUpdated"></div>
-                            <div id="currentConditionTemp"></div>
-                            <div id="currentConditionAQI"></div>
+                            <div style="margin: 0.75rem 0; text-align: center;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <img id="currentConditionIcon" style="margin-right: 0.5rem;"/>
+                                    <div id="currentConditionText"></div>
+                                    <div id="searchError" style="color: #FF2E2E; display: none;">Enter a valid city.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="currentConditionDetailBlock">
+                            <div>Last Updated: <span id="currentConditionLastUpdated"></span></div>
+                            <div>Temperature: <span id="currentConditionTemp"></span></div>
+                            <div>AQI: <span id="currentConditionAQI"></span></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="footer">
+            Powered by <a href="https://www.weatherapi.com/" target="_blank">Weather API</a>.
         </div>
     </div>
 </body>

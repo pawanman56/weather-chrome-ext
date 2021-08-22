@@ -12,20 +12,23 @@ function getWeatherData(location) {
         const res = Http.response;
     
         if (res.error) {
-            searchLocation.style.border = '1px solid #FF2E2E';
+            weatherLocation.style.display = 'none';
+            currentConditionIcon.setAttribute('src', '/icons/icon48.png');
+            currentConditionText.innerHTML = '';
             searchError.style.display = 'block';
+            currentConditionDetailBlock.style.display = 'none';
             console.log(res.error.message);
 
         } else {
-            searchLocation.style.border = '1px solid #2020B2';
             searchError.style.display = 'none';
-            blockTitle.innerHTML = res.location.name;
+            weatherLocation.style.display = 'flex';
             weatherLocationName.innerHTML = res.location.name;
             weatherLocationLocaltime.innerHTML = new Date(res.location.localtime).toDateString();
             weatherLocationTZ.innerHTML = res.location.tz_id;
             currentConditionIcon.setAttribute('src', 'http:' + res.current.condition.icon);
             currentConditionText.innerHTML = res.current.condition.text;
-            currentConditionLastUpdated.innerHTML = 'Last Updated: ' + new Date(res.current.last_updated).toLocaleTimeString();
+            currentConditionDetailBlock.style.display = 'block';
+            currentConditionLastUpdated.innerHTML = new Date(res.current.last_updated).toLocaleTimeString();
             currentConditionTemp.innerHTML = res.current.temp_c + 'C / ' + res.current.temp_f + 'F';
             currentConditionAQI.innerHTML = 'PM2.5: ' + res.current.air_quality.pm2_5.toFixed(0) + ', PM10: ' + res.current.air_quality.pm10.toFixed(0);
         }
