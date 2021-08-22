@@ -6,7 +6,6 @@
     "background": {
         "service_worker": "weather.js"
     },
-    "options_page": "options.html",
     "action": {
         "default_popup": "index.html",
         "defaut_icon": {
